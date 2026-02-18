@@ -2,11 +2,10 @@ package com.note_management_hub.Note_Management_Hub_API.services.interfaces;
 
 public interface NoteService {
     /*
-    public CompletableFuture<List<NoteResponse>> getAllNotes();
-    public CompletableFuture<List<NoteResponse>> getNoteById(UUID id);
-    public CompletableFuture<List<NoteResponse>> searchNotes(String searchTerm, User user);
-    public CompletableFuture<List<NoteResponse>> processBacklinks(Note note);
-    public CompletableFuture<List<NoteResponse>> updateNote (Note note);
-    public CompletableFuture<List<NoteResponse>> archiveNote(UUID id);
+    public CompletableFuture<NoteResponse> getNoteDetail(UUID id);
+    public CompletableFuture<Page<NoteResponse>> searchNotes(SearchCriteria criteria, UUID userId);
+    public CompletableFuture<NoteResponse> createNote(Note note);
+    public CompletableFuture<NoteResponse> updateNote (UUID id, NoteDTO note);
+    public CompletableFuture<List<NoteResponse>> softDeleteNote(UUID id);
      */
 }

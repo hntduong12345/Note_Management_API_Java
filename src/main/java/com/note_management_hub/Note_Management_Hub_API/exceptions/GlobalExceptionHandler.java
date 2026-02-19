@@ -11,7 +11,7 @@ import java.time.Instant;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(value = (BadRequestException.class))
+    @ExceptionHandler(BadRequestException.class)
     public ResponseEntity<Object> handleBadRequestException(BadRequestException exception){
         ExceptionObject badRequestException = new ExceptionObject(
                 Instant.now(),
@@ -25,7 +25,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(badRequestException, HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(value = (ConflictException.class))
+    @ExceptionHandler(ConflictException.class)
     public ResponseEntity<Object> handleConflictException(ConflictException exception){
         ExceptionObject conflictException = new ExceptionObject(
                 Instant.now(),
@@ -39,7 +39,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(conflictException, HttpStatus.CONFLICT);
     }
 
-    @ExceptionHandler(value = (InternalException.class))
+    @ExceptionHandler(InternalException.class)
     public ResponseEntity<Object> handleInternalException(InternalException exception){
         ExceptionObject internalException = new ExceptionObject(
                 Instant.now(),
@@ -53,7 +53,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(internalException, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @ExceptionHandler(value = (NotFoundException.class))
+    @ExceptionHandler(NotFoundException.class)
     public ResponseEntity<Object> handleNotFoundException(NotFoundException exception){
         ExceptionObject notFoundException = new ExceptionObject(
                 Instant.now(),
@@ -67,7 +67,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(notFoundException, HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler(value = (UnauthorizedException.class))
+    @ExceptionHandler(UnauthorizedException.class)
     public ResponseEntity<Object> handleUnauthorizeException(UnauthorizedException exception){
         ExceptionObject unauthorizedException = new ExceptionObject(
                 Instant.now(),

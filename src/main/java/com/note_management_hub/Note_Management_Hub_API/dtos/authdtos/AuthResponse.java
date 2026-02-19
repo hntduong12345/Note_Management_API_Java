@@ -1,13 +1,11 @@
 package com.note_management_hub.Note_Management_Hub_API.dtos.authdtos;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 
 import java.util.UUID;
 
 @Data
-@Builder
 @AllArgsConstructor
 public class AuthResponse{
     private final String status; // SUCCESS, MFA_REQUIRED, LOCKED

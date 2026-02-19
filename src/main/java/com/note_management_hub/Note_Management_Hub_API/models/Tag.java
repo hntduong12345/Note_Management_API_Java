@@ -1,6 +1,7 @@
 package com.note_management_hub.Note_Management_Hub_API.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,6 +16,7 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Tag extends BaseEntity{
     @Column(nullable = false, length = 50)
     private String name;

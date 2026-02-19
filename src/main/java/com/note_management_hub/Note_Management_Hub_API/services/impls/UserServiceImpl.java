@@ -70,12 +70,7 @@ public class UserServiceImpl implements UserService {
         String jwtToken = jwtService.generateToken(userDetails);
 
         return CompletableFuture.completedFuture(
-                AuthResponse.builder()
-                        .status("SUCCESS")
-                        .token(jwtToken)
-                        .userId(savedUser.getId())
-                        .email(savedUser.getEmail())
-                        .build()
+                new AuthResponse("SUCCESS", jwtToken, "", savedUser.getId(), savedUser.getEmail())
         );
     }
 
@@ -105,12 +100,7 @@ public class UserServiceImpl implements UserService {
 
         String jwtToken = jwtService.generateToken(userDetails);
         return CompletableFuture.completedFuture(
-                AuthResponse.builder()
-                        .status("SUCCESS")
-                        .token(jwtToken)
-                        .userId(user.getId())
-                        .email(user.getEmail())
-                        .build()
+                new AuthResponse("SUCCESS", jwtToken, "", user.getId(), user.getEmail())
         );
     }
 

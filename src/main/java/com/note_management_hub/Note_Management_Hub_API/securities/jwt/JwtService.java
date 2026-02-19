@@ -2,6 +2,7 @@ package com.note_management_hub.Note_Management_Hub_API.securities.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
@@ -67,4 +69,18 @@ public class JwtService {
                 .signWith(signingKey)
                 .compact();
     }
+
+//    public String generateMfaToken(UserDetails userDetails) {
+//        Map<String, Object> claims = new HashMap<>();
+//        claims.put("mfa_pending", true); // The "Special Gate" claim
+//        claims.put("type", "MFA_TOKEN");
+//
+//        return Jwts.builder()
+//                .claims(claims)
+//                .subject(userDetails.getUsername())
+//                .issuedAt(new Date(System.currentTimeMillis()))
+//                .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 5)) // 5 Minutes
+//                .signWith(signingKey)
+//                .compact();
+//    }
 }
